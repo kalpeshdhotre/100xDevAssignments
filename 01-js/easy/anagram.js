@@ -5,9 +5,25 @@
 */
 
 function isAnagram(str1, str2) {
+  let sortedString1 = str1.toLowerCase().split("").sort().join("");
+  let sortedString2 = str2.toLowerCase().split("").sort().join("");
+  console.log(sortedString1);
+  console.log(sortedString2);
 
+  if (str1.length != str2.length) {
+     console.log("NOT anagram - Length Different");
+     return false;
+  }
+
+  if (sortedString1 == sortedString2) {
+     console.log("Strings are Anagram");
+     return true;
+  } else {
+     console.log("NOT anagram - not matching characters");
+     return false;
+  }
 }
 
-module.exports = isAnagram;
+isAnagram("conversationalists", "conservationalists");
 
-console.log("Test");
+module.exports = isAnagram;
