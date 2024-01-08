@@ -11,7 +11,7 @@ function isAnagram(str1, str2) {
   console.log(sortedString2);
 
   if (str1.length != str2.length) {
-     console.log("NOT anagram - Length Different");
+     console.log("NOT anagram - Length Different!");
      return false;
   }
 
