@@ -13,7 +13,7 @@ function isAnagram(str1, str2) {
   console.log(sortedString2);
 
   if (str1.length != str2.length) {
-     console.log("NOT anagram - Length Different!");
+     console.log("NOT Anagram - Length Different!");
      return false;
   }
 
@@ -26,6 +26,6 @@ function isAnagram(str1, str2) {
   }
 }
 
-isAnagram("conversationalists", "conservationalists");
+// isAnagram("conversationalists", "conservationalists");
 
 module.exports = isAnagram;
