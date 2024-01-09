@@ -62,31 +62,31 @@ function calculateTotalSpentByCategory(transactions) {
    // Check Object length for empty object.
    if (transactions.length == 0) {
       // console.log(`NO DATA`);
-      return;
+      return finalExpense;
    }
 
    for (let i = 0; i < transactions.length; i++) {
       // adding first element in array
 
       if (finalExpense.length == 0 || checkArray(finalExpense, transactions[i].category) == false) {
-         finalExpense.push({ category: transactions[i].category, price: transactions[i].price });
-        //  console.log("new category added");
+         finalExpense.push({ category: transactions[i].category, totalSpent: transactions[i].price });
+         //  console.log("new category added");
       } else {
          finalExpense.forEach((element) => {
             // console.log(transactions[i].itemName);
             if (transactions[i].category == element.category) {
-               element.price += transactions[i].price;
-              //  console.log("price updated");
-              //  console.log(finalExpense);
+               element.totalSpent += transactions[i].price;
+               //  console.log("price updated");
+               //  console.log(finalExpense);
             }
          });
       }
-      // console.log(finalExpense);
    }
+   console.log(finalExpense);
    return finalExpense;
 }
 
 // return [];
 
-// calculateTotalSpentByCategory(transactions);
+calculateTotalSpentByCategory(transactions);
 module.exports = calculateTotalSpentByCategory;
