@@ -55,6 +55,7 @@ function calculateTotalSpentByCategory(transactions) {
    // array to store final result
    const finalExpense = [];
 
+   // function to check category exist in array or not
    const checkArray = (arr, val) => {
       return arr.some((obj) => obj.category === val);
    };
