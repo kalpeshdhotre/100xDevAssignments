@@ -52,43 +52,41 @@ const transactions = [
 ];
 
 function calculateTotalSpentByCategory(transactions) {
-   // Check Object length for empty object.
+   // array to store final result
    const finalExpense = [];
-   //  const objExpense = {
-   //     category: null,
-   //     price: null,
-   //  };
 
+   const checkArray = (arr, val) => {
+      return arr.some((obj) => obj.category === val);
+   };
+
+   // Check Object length for empty object.
    if (transactions.length == 0) {
-      console.log(`NO DATA`);
+      // console.log(`NO DATA`);
       return;
    }
-   finalExpense.push({ category: transactions[0].category, price: transactions[0].price });
 
-   for (let i = 1; i < transactions.length; i++) {
-      // console.log(Object.keys(transactions[i]));
+   for (let i = 0; i < transactions.length; i++) {
       // adding first element in array
-      // if (finalExpense.length = 0) {
-         //  objExpense.category = transactions[i].category;
-         //  objExpense.price = transactions[i].price;
-         //  finalExpense.push(objExpense);
-        //  finalExpense.push({ category: transactions.category, price: transactions.price });
-      // } else {
+
+      if (finalExpense.length == 0 || checkArray(finalExpense, transactions[i].category) == false) {
+         finalExpense.push({ category: transactions[i].category, price: transactions[i].price });
+        //  console.log("new category added");
+      } else {
          finalExpense.forEach((element) => {
             // console.log(transactions[i].itemName);
-
-            if (element.category == transactions[i].category) {
+            if (transactions[i].category == element.category) {
                element.price += transactions[i].price;
-            } else {
-               finalExpense.push({ category: transactions[i].category, price: transactions[i].price });
+              //  console.log("price updated");
+              //  console.log(finalExpense);
             }
          });
-      // }
+      }
+      // console.log(finalExpense);
    }
-   console.log(finalExpense);
+   return finalExpense;
 }
 
 // return [];
 
-calculateTotalSpentByCategory(transactions);
-// module.exports = calculateTotalSpentByCategory;
+// calculateTotalSpentByCategory(transactions);
+module.exports = calculateTotalSpentByCategory;

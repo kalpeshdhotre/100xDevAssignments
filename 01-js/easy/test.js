@@ -36,33 +36,9 @@ const transactions = [
    },
 ];
 
+const checkArray= (arr, val) => {
+   return arr.some(obj => obj.category === val);
+}
 
+console.log(checkArray(transactions, "Foodd"));
 
-// console.log(transactions[4].category);
-
-// console.log(Object.keys(transactions[4])[4]);
-
-// console.log(transactions[0].category);
-
-// const finalExpense = [];
-
-// const objExpense = {
-//    category: null,
-//    price: null,
-// };
-
-// if (finalExpense.length == 0) {
-//    objExpense.category = transactions[0].category;
-//    objExpense.price = transactions[0].price;
-//    finalExpense.push(objExpense);
-
-// }
-
-// console.log(finalExpense);
-// transactions.forEach(element => {
-//      console.log(element.itemName);
-
-// });
-
-// const finalExpense = [];
-// console.log(finalExpense.length);
