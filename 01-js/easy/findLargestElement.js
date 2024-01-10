@@ -4,7 +4,7 @@
   - Input: [3, 7, 2, 9, 1]
   - Output: 9
 */
-//  TODO assignment complete
+// assignment complete
 
 function findLargestElement(numbers) {
    let largestNumber = numbers[0];
