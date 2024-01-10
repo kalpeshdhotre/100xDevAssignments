@@ -4,7 +4,19 @@
 */
 
 function isPalindrome(str) {
-  return true;
-}
+   let strToCheck = [...str.toLowerCase().replace(/[^\w]|_/g, "")].join("");
 
+  //  console.log(strToCheck);
+  //  console.log([...strToCheck].reverse().join(""));
+   
+
+   if (strToCheck == [...strToCheck].reverse().join("")) {
+      // console.log("Strin is Palindrom");
+      return true;
+   } else {
+      // console.log("Strin is NOT Palindrom");
+      return false;
+   }
+}
+// isPalindrome("A man a plan a canal Panama!!");
 module.exports = isPalindrome;
